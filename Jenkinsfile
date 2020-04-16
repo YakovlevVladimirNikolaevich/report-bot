@@ -31,8 +31,8 @@ pipeline {
                     docker.withRegistry("https://$registryAddress") {
                         def customImage = docker.build(nameImage,"-f .dockerfile .")
                         sh "rm .env"
-                        customImage.push(numberBuild)
-                        customImage.push("latest")
+                       // customImage.push(numberBuild)
+                       // customImage.push("latest")
                     }
                 }    
             }
